@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ffd6ec;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND LOVE (emoji) */
+.love-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.love-bg span {
+    position: absolute;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+    opacity: 0.8;
+}
+
+/* FLOATING ANIMATION */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+    }
+    100% {
+        transform: translateY(-20vh) scale(1.2);
+    }
+}
+
+/* CENTER CONTENT */
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* ANIMATED ICON */
+.hb-icon {
+    width: 150px;
+    animation: bounce 1.6s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* TYPEWRITER TEXT */
+.hb-text {
+    margin-top: 25px;
+    font-size: 2.8rem;
+    color: #b3005f;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #b3005f;
+    width: 0;
+    animation: cursorBlink .6s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% { border-color: transparent; }
+    50%, 100% { border-color: #b3005f; }
+}
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 480px) {
+
+    .hb-text {
+        font-size: 1.8rem;      /* Mengecilkan font */
+        white-space: normal;    /* Membolehkan teks turun ke baris berikutnya */
+        width: auto;            /* Supaya tidak kepotong */
+        border-right: 0;        /* Opsional, bisa dihapus kalau mau */
+        animation: none;        /* Jika ingin tetap animasi ketik, hapus baris ini */
+    }
+
+    .hb-icon {
+        width: 110px;           /* Ikon sedikit lebih kecil */
+    }
+}
+

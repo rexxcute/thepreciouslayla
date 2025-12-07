@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Game Mini</title>
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<audio id="bg-music" loop>
+  <source src="assets/music/hbd.mp3" type="audio/mp3">
+</audio>
+
+<h1 class="title">Memory Game Mini</h1>
+
+<div id="grid" class="grid"></div>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <img src="assets/img/stiker2.gif" class="sticker" />
+    <p id="typed-text"></p>
+    <button id="popup-close">LANJUT</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+// Auto-start music
+window.onload = () => {
+  const music = document.getElementById("bg-music");
+  music.volume = 0.5;
+  music.play().catch(() => {});
+};
+</script>
+
+</body>
+</html>
